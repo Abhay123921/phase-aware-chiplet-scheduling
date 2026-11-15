@@ -1,0 +1,33 @@
+system:
+  name: "P04_4Chiplet_Baseline"
+  num_chiplets: 4
+
+chiplets:
+  C1:
+    type: "compute"
+    compute_capacity: 1.50
+    memory_capacity: 1.00
+    memory_bandwidth: 0.75
+
+  C2:
+    type: "compute"
+    compute_capacity: 1.50
+    memory_capacity: 1.00
+    memory_bandwidth: 0.75
+
+  C3:
+    type: "memory"
+    compute_capacity: 0.75
+    memory_capacity: 1.00
+    memory_bandwidth: 1.50
+
+  C4:
+    type: "balanced"
+    compute_capacity: 1.00
+    memory_capacity: 1.25
+    memory_bandwidth: 1.00
+
+nop:
+  topology: "mesh_2x2"
+  bandwidth: 1.00
+  hop_latency: 1.00

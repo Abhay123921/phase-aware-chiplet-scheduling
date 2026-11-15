@@ -1,0 +1,19 @@
+t3
+C 32 M 2 R 3 S 3 N 1 P 28 Q 2 G 1 
+CSRPMQ
+#error Tenssella does not support bypass.
+#error Tenssella does not support bypass.
+#error Tenssella does not support bypass.
+t2
+C 2 M 16 R 1 S 1 N 1 P 1 Q 7 G 1 
+CMQ
+t1
+C 1 M 1 R 1 S 1 N 1 P 1 Q 1 G 1 
+G
+s1
+C 2 M 4 R 1 S 1 N 1 P 1 Q 2 G 1 
+MQC
+8
+t0
+C 1 M 1 R 1 S 1 N 1 P 1 Q 1 G 1 
+G

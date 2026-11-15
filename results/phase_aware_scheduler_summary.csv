@@ -1,0 +1,4 @@
+policy,layers,estimated_execution_cycles,remapping_count,remap_overhead_cycles,modeled_total_cycles,unique_chiplets_used,assumption_remap_cost_fraction,assumption_lookahead_layers
+phase_aware,53,230016846.02051902,27,7202406.4,237219252.420519,2,0.05,2
+reactive,53,229749240.68718567,27,7523532.800000001,237272773.4871857,2,0.05,1
+static,53,263932928.0,0,0.0,263932928.0,1,0.05,1

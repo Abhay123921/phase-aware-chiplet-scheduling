@@ -1,0 +1,4 @@
+policy,layers,execution_cycles,remapping_count,communication_cycles_proxy,modeled_total_cycles,unique_chiplets_used,communication_fraction_percent
+phase_aware,53,229603890.7777107,29,1774.0,229605664.7777107,2,0.0007726290210293686
+reactive,53,229603890.7777107,29,1775.0,229605665.7777107,3,0.0007730645469865886
+static,53,263932928.0,0,0.0,263932928.0,1,0.0

@@ -1,0 +1,617 @@
+{
+  "experiment": "E2_controlled_calibration_ablation",
+  "selected_layers": [
+    "46_layer4_0_conv3",
+    "45_layer4_0_conv2"
+  ],
+  "calibration_layer_count": 17,
+  "evaluation_layer_count": 36,
+  "selected_model": "median",
+  "profile_conditions": [
+    "offline_timeloop_reference",
+    "metadata_causal"
+  ],
+  "scale_conditions": {
+    "offline_v2": {
+      "source_file": "/home/workspace/P04/configs/compact_calibration_scales_v2.json",
+      "scales": {
+        "input_bw": 19.948836565096954,
+        "weight_bw": 16.33,
+        "output_bw": 32.38,
+        "dram_input_bw": 1.0,
+        "dram_weight_bw": 1.14,
+        "dram_output_bw": 0.9900000000000001
+      }
+    },
+    "causal_v2": {
+      "source_file": "/home/workspace/P04/configs/compact_calibration_scales_causal_v2.json",
+      "scales": {
+        "input_bw": 5.191828254847646,
+        "weight_bw": 8.01,
+        "output_bw": 2.22,
+        "dram_input_bw": 0.3054016620498615,
+        "dram_weight_bw": 0.29,
+        "dram_output_bw": 0.25
+      }
+    }
+  },
+  "policies": [
+    "static",
+    "static_rr",
+    "reactive",
+    "oracle_phase_aware"
+  ],
+  "run_count": 16,
+  "results": [
+    {
+      "profile_source": "offline_timeloop_reference",
+      "scale_source": "offline_v2",
+      "policy": "static",
+      "makespan": 13909577.889374351,
+      "completed_groups": 37632,
+      "remaps": 0,
+      "average_group_duration": 369.6210110909426,
+      "chiplet_utilization": {
+        "C1": 1.0,
+        "C2": 0.0,
+        "C3": 0.0,
+        "C4": 0.0
+      },
+      "chiplet_group_counts": {
+        "C1": 37632,
+        "C2": 0,
+        "C3": 0,
+        "C4": 0
+      },
+      "workload_chiplet_counts": {
+        "46_layer4_0_conv3": {
+          "C1": 12544,
+          "C2": 0,
+          "C3": 0,
+          "C4": 0
+        },
+        "45_layer4_0_conv2": {
+          "C1": 25088,
+          "C2": 0,
+          "C3": 0,
+          "C4": 0
+        }
+      }
+    },
+    {
+      "profile_source": "offline_timeloop_reference",
+      "scale_source": "offline_v2",
+      "policy": "static_rr",
+      "makespan": 4615856.1461333325,
+      "completed_groups": 37632,
+      "remaps": 0,
+      "average_group_duration": 426.5555801770315,
+      "chiplet_utilization": {
+        "C1": 0.825734047322942,
+        "C2": 0.8257513472266085,
+        "C3": 1.0,
+        "C4": 0.8261228941448582
+      },
+      "chiplet_group_counts": {
+        "C1": 9408,
+        "C2": 9408,
+        "C3": 9408,
+        "C4": 9408
+      },
+      "workload_chiplet_counts": {
+        "46_layer4_0_conv3": {
+          "C1": 3136,
+          "C2": 3136,
+          "C3": 3136,
+          "C4": 3136
+        },
+        "45_layer4_0_conv2": {
+          "C1": 6272,
+          "C2": 6272,
+          "C3": 6272,
+          "C4": 6272
+        }
+      }
+    },
+    {
+      "profile_source": "offline_timeloop_reference",
+      "scale_source": "offline_v2",
+      "policy": "reactive",
+      "makespan": 3653247.9999999995,
+      "completed_groups": 37632,
+      "remaps": 0,
+      "average_group_duration": 388.29680564256955,
+      "chiplet_utilization": {
+        "C1": 0.9999154104721721,
+        "C2": 0.9999478838715274,
+        "C3": 0.9999706588766916,
+        "C4": 1.0
+      },
+      "chiplet_group_counts": {
+        "C1": 9733,
+        "C2": 9519,
+        "C3": 8866,
+        "C4": 9514
+      },
+      "workload_chiplet_counts": {
+        "46_layer4_0_conv3": {
+          "C1": 6272,
+          "C2": 0,
+          "C3": 6271,
+          "C4": 1
+        },
+        "45_layer4_0_conv2": {
+          "C1": 3461,
+          "C2": 9519,
+          "C3": 2595,
+          "C4": 9513
+        }
+      }
+    },
+    {
+      "profile_source": "offline_timeloop_reference",
+      "scale_source": "offline_v2",
+      "policy": "oracle_phase_aware",
+      "makespan": 3849700.976585673,
+      "completed_groups": 37632,
+      "remaps": 0,
+      "average_group_duration": 409.17607037794716,
+      "chiplet_utilization": {
+        "C1": 1.0,
+        "C2": 0.9999334342281556,
+        "C3": 0.9999643005903118,
+        "C4": 0.9999230237566861
+      },
+      "chiplet_group_counts": {
+        "C1": 10034,
+        "C2": 10033,
+        "C3": 7534,
+        "C4": 10031
+      },
+      "workload_chiplet_counts": {
+        "46_layer4_0_conv3": {
+          "C1": 4152,
+          "C2": 4144,
+          "C3": 57,
+          "C4": 4191
+        },
+        "45_layer4_0_conv2": {
+          "C1": 5882,
+          "C2": 5889,
+          "C3": 7477,
+          "C4": 5840
+        }
+      }
+    },
+    {
+      "profile_source": "offline_timeloop_reference",
+      "scale_source": "causal_v2",
+      "policy": "static",
+      "makespan": 41238421.86218098,
+      "completed_groups": 37632,
+      "remaps": 0,
+      "average_group_duration": 1095.833914279894,
+      "chiplet_utilization": {
+        "C1": 1.0,
+        "C2": 0.0,
+        "C3": 0.0,
+        "C4": 0.0
+      },
+      "chiplet_group_counts": {
+        "C1": 37632,
+        "C2": 0,
+        "C3": 0,
+        "C4": 0
+      },
+      "workload_chiplet_counts": {
+        "46_layer4_0_conv3": {
+          "C1": 12544,
+          "C2": 0,
+          "C3": 0,
+          "C4": 0
+        },
+        "45_layer4_0_conv2": {
+          "C1": 25088,
+          "C2": 0,
+          "C3": 0,
+          "C4": 0
+        }
+      }
+    },
+    {
+      "profile_source": "offline_timeloop_reference",
+      "scale_source": "causal_v2",
+      "policy": "static_rr",
+      "makespan": 16569690.352411881,
+      "completed_groups": 37632,
+      "remaps": 0,
+      "average_group_duration": 1718.4219284950254,
+      "chiplet_utilization": {
+        "C1": 0.9999029309068923,
+        "C2": 0.9976726891732224,
+        "C3": 0.9399149693036514,
+        "C4": 0.9652772136196585
+      },
+      "chiplet_group_counts": {
+        "C1": 9408,
+        "C2": 9408,
+        "C3": 9408,
+        "C4": 9408
+      },
+      "workload_chiplet_counts": {
+        "46_layer4_0_conv3": {
+          "C1": 3136,
+          "C2": 3136,
+          "C3": 3136,
+          "C4": 3136
+        },
+        "45_layer4_0_conv2": {
+          "C1": 6272,
+          "C2": 6272,
+          "C3": 6272,
+          "C4": 6272
+        }
+      }
+    },
+    {
+      "profile_source": "offline_timeloop_reference",
+      "scale_source": "causal_v2",
+      "policy": "reactive",
+      "makespan": 16314971.376004474,
+      "completed_groups": 37632,
+      "remaps": 0,
+      "average_group_duration": 1734.0610921286989,
+      "chiplet_utilization": {
+        "C1": 0.9999235013733239,
+        "C2": 0.999882710778442,
+        "C3": 0.9999670951411703,
+        "C4": 1.0
+      },
+      "chiplet_group_counts": {
+        "C1": 8805,
+        "C2": 8807,
+        "C3": 10010,
+        "C4": 10010
+      },
+      "workload_chiplet_counts": {
+        "46_layer4_0_conv3": {
+          "C1": 3136,
+          "C2": 3136,
+          "C3": 3136,
+          "C4": 3136
+        },
+        "45_layer4_0_conv2": {
+          "C1": 5669,
+          "C2": 5671,
+          "C3": 6874,
+          "C4": 6874
+        }
+      }
+    },
+    {
+      "profile_source": "offline_timeloop_reference",
+      "scale_source": "causal_v2",
+      "policy": "oracle_phase_aware",
+      "makespan": 16317803.674474468,
+      "completed_groups": 37632,
+      "remaps": 0,
+      "average_group_duration": 1734.3461244114376,
+      "chiplet_utilization": {
+        "C1": 0.9999505394057867,
+        "C2": 0.9998674954179353,
+        "C3": 0.9999183669538265,
+        "C4": 1.0
+      },
+      "chiplet_group_counts": {
+        "C1": 8807,
+        "C2": 8799,
+        "C3": 10013,
+        "C4": 10013
+      },
+      "workload_chiplet_counts": {
+        "46_layer4_0_conv3": {
+          "C1": 3137,
+          "C2": 3135,
+          "C3": 3136,
+          "C4": 3136
+        },
+        "45_layer4_0_conv2": {
+          "C1": 5670,
+          "C2": 5664,
+          "C3": 6877,
+          "C4": 6877
+        }
+      }
+    },
+    {
+      "profile_source": "metadata_causal",
+      "scale_source": "offline_v2",
+      "policy": "static",
+      "makespan": 6957738.666667009,
+      "completed_groups": 37632,
+      "remaps": 0,
+      "average_group_duration": 184.88888888889798,
+      "chiplet_utilization": {
+        "C1": 1.0,
+        "C2": 0.0,
+        "C3": 0.0,
+        "C4": 0.0
+      },
+      "chiplet_group_counts": {
+        "C1": 37632,
+        "C2": 0,
+        "C3": 0,
+        "C4": 0
+      },
+      "workload_chiplet_counts": {
+        "46_layer4_0_conv3": {
+          "C1": 12544,
+          "C2": 0,
+          "C3": 0,
+          "C4": 0
+        },
+        "45_layer4_0_conv2": {
+          "C1": 25088,
+          "C2": 0,
+          "C3": 0,
+          "C4": 0
+        }
+      }
+    },
+    {
+      "profile_source": "metadata_causal",
+      "scale_source": "offline_v2",
+      "policy": "static_rr",
+      "makespan": 3478869.333333376,
+      "completed_groups": 37632,
+      "remaps": 0,
+      "average_group_duration": 254.22222222222038,
+      "chiplet_utilization": {
+        "C1": 0.5,
+        "C2": 0.5,
+        "C3": 1.0,
+        "C4": 0.7499999999999908
+      },
+      "chiplet_group_counts": {
+        "C1": 9408,
+        "C2": 9408,
+        "C3": 9408,
+        "C4": 9408
+      },
+      "workload_chiplet_counts": {
+        "46_layer4_0_conv3": {
+          "C1": 3136,
+          "C2": 3136,
+          "C3": 3136,
+          "C4": 3136
+        },
+        "45_layer4_0_conv2": {
+          "C1": 6272,
+          "C2": 6272,
+          "C3": 6272,
+          "C4": 6272
+        }
+      }
+    },
+    {
+      "profile_source": "metadata_causal",
+      "scale_source": "offline_v2",
+      "policy": "reactive",
+      "makespan": 2197312.000000053,
+      "completed_groups": 37632,
+      "remaps": 0,
+      "average_group_duration": 233.54535147392122,
+      "chiplet_utilization": {
+        "C1": 0.9999611646714726,
+        "C2": 0.9998737851823513,
+        "C3": 0.9999514558393553,
+        "C4": 0.9999999999999758
+      },
+      "chiplet_group_counts": {
+        "C1": 11884,
+        "C2": 11883,
+        "C3": 5942,
+        "C4": 7923
+      },
+      "workload_chiplet_counts": {
+        "46_layer4_0_conv3": {
+          "C1": 3961,
+          "C2": 3961,
+          "C3": 1981,
+          "C4": 2641
+        },
+        "45_layer4_0_conv2": {
+          "C1": 7923,
+          "C2": 7922,
+          "C3": 3961,
+          "C4": 5282
+        }
+      }
+    },
+    {
+      "profile_source": "metadata_causal",
+      "scale_source": "offline_v2",
+      "policy": "oracle_phase_aware",
+      "makespan": 2197312.000000053,
+      "completed_groups": 37632,
+      "remaps": 0,
+      "average_group_duration": 233.54535147392122,
+      "chiplet_utilization": {
+        "C1": 0.9999611646714726,
+        "C2": 0.9998737851823513,
+        "C3": 0.9999514558393553,
+        "C4": 0.9999999999999758
+      },
+      "chiplet_group_counts": {
+        "C1": 11884,
+        "C2": 11883,
+        "C3": 5942,
+        "C4": 7923
+      },
+      "workload_chiplet_counts": {
+        "46_layer4_0_conv3": {
+          "C1": 3961,
+          "C2": 3961,
+          "C3": 1981,
+          "C4": 2641
+        },
+        "45_layer4_0_conv2": {
+          "C1": 7923,
+          "C2": 7922,
+          "C3": 3961,
+          "C4": 5282
+        }
+      }
+    },
+    {
+      "profile_source": "metadata_causal",
+      "scale_source": "causal_v2",
+      "policy": "static",
+      "makespan": 13915477.333334018,
+      "completed_groups": 37632,
+      "remaps": 0,
+      "average_group_duration": 369.77777777779596,
+      "chiplet_utilization": {
+        "C1": 1.0,
+        "C2": 0.0,
+        "C3": 0.0,
+        "C4": 0.0
+      },
+      "chiplet_group_counts": {
+        "C1": 37632,
+        "C2": 0,
+        "C3": 0,
+        "C4": 0
+      },
+      "workload_chiplet_counts": {
+        "46_layer4_0_conv3": {
+          "C1": 12544,
+          "C2": 0,
+          "C3": 0,
+          "C4": 0
+        },
+        "45_layer4_0_conv2": {
+          "C1": 25088,
+          "C2": 0,
+          "C3": 0,
+          "C4": 0
+        }
+      }
+    },
+    {
+      "profile_source": "metadata_causal",
+      "scale_source": "causal_v2",
+      "policy": "static_rr",
+      "makespan": 4566016.0,
+      "completed_groups": 37632,
+      "remaps": 0,
+      "average_group_duration": 485.3242630385487,
+      "chiplet_utilization": {
+        "C1": 0.9999626224116019,
+        "C2": 0.9999766390072512,
+        "C3": 0.9999859834043507,
+        "C4": 1.0
+      },
+      "chiplet_group_counts": {
+        "C1": 9408,
+        "C2": 9408,
+        "C3": 9408,
+        "C4": 9408
+      },
+      "workload_chiplet_counts": {
+        "46_layer4_0_conv3": {
+          "C1": 3136,
+          "C2": 3136,
+          "C3": 3136,
+          "C4": 3136
+        },
+        "45_layer4_0_conv2": {
+          "C1": 6272,
+          "C2": 6272,
+          "C3": 6272,
+          "C4": 6272
+        }
+      }
+    },
+    {
+      "profile_source": "metadata_causal",
+      "scale_source": "causal_v2",
+      "policy": "reactive",
+      "makespan": 4566016.0,
+      "completed_groups": 37632,
+      "remaps": 0,
+      "average_group_duration": 485.3236961451247,
+      "chiplet_utilization": {
+        "C1": 0.9999766390072512,
+        "C2": 0.9999859834043507,
+        "C3": 1.0,
+        "C4": 0.9999579502130522
+      },
+      "chiplet_group_counts": {
+        "C1": 9408,
+        "C2": 9408,
+        "C3": 9408,
+        "C4": 9408
+      },
+      "workload_chiplet_counts": {
+        "46_layer4_0_conv3": {
+          "C1": 3136,
+          "C2": 3136,
+          "C3": 3136,
+          "C4": 3136
+        },
+        "45_layer4_0_conv2": {
+          "C1": 6272,
+          "C2": 6272,
+          "C3": 6272,
+          "C4": 6272
+        }
+      }
+    },
+    {
+      "profile_source": "metadata_causal",
+      "scale_source": "causal_v2",
+      "policy": "oracle_phase_aware",
+      "makespan": 4566016.0,
+      "completed_groups": 37632,
+      "remaps": 0,
+      "average_group_duration": 485.3242630385487,
+      "chiplet_utilization": {
+        "C1": 0.9999626224116019,
+        "C2": 0.9999766390072512,
+        "C3": 0.9999859834043507,
+        "C4": 1.0
+      },
+      "chiplet_group_counts": {
+        "C1": 9408,
+        "C2": 9408,
+        "C3": 9408,
+        "C4": 9408
+      },
+      "workload_chiplet_counts": {
+        "46_layer4_0_conv3": {
+          "C1": 3136,
+          "C2": 3136,
+          "C3": 3136,
+          "C4": 3136
+        },
+        "45_layer4_0_conv2": {
+          "C1": 6272,
+          "C2": 6272,
+          "C3": 6272,
+          "C4": 6272
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "Only two held-out ResNet-50 layers are evaluated concurrently.",
+    "Offline group profiles allocate layer-level Timeloop measurements using logical access proxies.",
+    "Metadata group profiles use calibration medians and a nominal 16 logical-operations-per-cycle rate.",
+    "Cross-combinations of profile source and scale source are normalization ablations, not independently optimized calibrations.",
+    "The comparison changes both bandwidth and reference-cycle estimates.",
+    "Oracle phase-aware scheduling accesses future group profiles.",
+    "The simulator is an abstract scheduling model, not a cycle-accurate hardware implementation.",
+    "No layer transition occurs in these single-layer workloads, so remapping overhead is not exercised."
+  ]
+}

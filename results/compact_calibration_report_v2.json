@@ -1,0 +1,526 @@
+{
+  "experiment": "compact_group_calibration",
+  "model": "ResNet-50",
+  "split_manifest": "configs/compact_calibration_split_v2.json",
+  "split_policy": "stage-stratified, deterministic, layer-disjoint",
+  "calibration_layer_ids": [
+    "01_conv1",
+    "05_layer1_0_downsample_0",
+    "06_layer1_1_conv1",
+    "07_layer1_1_conv2",
+    "08_layer1_1_conv3",
+    "15_layer2_0_downsample_0",
+    "16_layer2_1_conv1",
+    "17_layer2_1_conv2",
+    "18_layer2_1_conv3",
+    "28_layer3_0_downsample_0",
+    "32_layer3_2_conv1",
+    "33_layer3_2_conv2",
+    "34_layer3_2_conv3",
+    "47_layer4_0_downsample_0",
+    "51_layer4_2_conv1",
+    "52_layer4_2_conv2",
+    "53_layer4_2_conv3"
+  ],
+  "evaluation_layer_ids": [
+    "02_layer1_0_conv1",
+    "03_layer1_0_conv2",
+    "04_layer1_0_conv3",
+    "09_layer1_2_conv1",
+    "10_layer1_2_conv2",
+    "11_layer1_2_conv3",
+    "12_layer2_0_conv1",
+    "13_layer2_0_conv2",
+    "14_layer2_0_conv3",
+    "19_layer2_2_conv1",
+    "20_layer2_2_conv2",
+    "21_layer2_2_conv3",
+    "22_layer2_3_conv1",
+    "23_layer2_3_conv2",
+    "24_layer2_3_conv3",
+    "25_layer3_0_conv1",
+    "26_layer3_0_conv2",
+    "27_layer3_0_conv3",
+    "29_layer3_1_conv1",
+    "30_layer3_1_conv2",
+    "31_layer3_1_conv3",
+    "35_layer3_3_conv1",
+    "36_layer3_3_conv2",
+    "37_layer3_3_conv3",
+    "38_layer3_4_conv1",
+    "39_layer3_4_conv2",
+    "40_layer3_4_conv3",
+    "41_layer3_5_conv1",
+    "42_layer3_5_conv2",
+    "43_layer3_5_conv3",
+    "44_layer4_0_conv1",
+    "45_layer4_0_conv2",
+    "46_layer4_0_conv3",
+    "48_layer4_1_conv1",
+    "49_layer4_1_conv2",
+    "50_layer4_1_conv3"
+  ],
+  "calibration_layer_count": 17,
+  "evaluation_layer_count": 36,
+  "resource_keys": [
+    "input_bw",
+    "weight_bw",
+    "output_bw",
+    "dram_input_bw",
+    "dram_weight_bw",
+    "dram_output_bw"
+  ],
+  "scale_method": "maximum estimated compact-group bandwidth per resource",
+  "scale_provenance": "Derived exclusively from compact-group profiles allocated from calibration-layer Timeloop measurements.",
+  "layers": [
+    {
+      "layer_id": "01_conv1",
+      "group_count": 50176,
+      "output_coordinates": 802816,
+      "logical_slots": 118013952,
+      "valid_contributions": 116214528,
+      "padding_slots": 1799424,
+      "conservation_validated": true,
+      "original_layer_timeloop_bandwidths": {
+        "input_bw": 2.2,
+        "weight_bw": 8.01,
+        "output_bw": 0.54,
+        "dram_input_bw": 0.2,
+        "dram_weight_bw": 0.01,
+        "dram_output_bw": 0.11
+      },
+      "maximum_derived_group_bandwidths": {
+        "input_bw": 2.2340640096219304,
+        "weight_bw": 8.01,
+        "output_bw": 0.54,
+        "dram_input_bw": 0.20309672814744817,
+        "dram_weight_bw": 0.01,
+        "dram_output_bw": 0.11000000000000001
+      },
+      "elapsed_seconds": 10.918
+    },
+    {
+      "layer_id": "05_layer1_0_downsample_0",
+      "group_count": 401408,
+      "output_coordinates": 802816,
+      "logical_slots": 51380224,
+      "valid_contributions": 51380224,
+      "padding_slots": 0,
+      "conservation_validated": true,
+      "original_layer_timeloop_bandwidths": {
+        "input_bw": 1.0,
+        "weight_bw": 8.29,
+        "output_bw": 3.75,
+        "dram_input_bw": 0.5,
+        "dram_weight_bw": 0.29,
+        "dram_output_bw": 0.25
+      },
+      "maximum_derived_group_bandwidths": {
+        "input_bw": 1.0,
+        "weight_bw": 8.29,
+        "output_bw": 3.7499999999999996,
+        "dram_input_bw": 0.5,
+        "dram_weight_bw": 0.29,
+        "dram_output_bw": 0.25
+      },
+      "elapsed_seconds": 3.759
+    },
+    {
+      "layer_id": "06_layer1_1_conv1",
+      "group_count": 25088,
+      "output_coordinates": 200704,
+      "logical_slots": 51380224,
+      "valid_contributions": 51380224,
+      "padding_slots": 0,
+      "conservation_validated": true,
+      "original_layer_timeloop_bandwidths": {
+        "input_bw": 4.25,
+        "weight_bw": 0.57,
+        "output_bw": 15.94,
+        "dram_input_bw": 0.25,
+        "dram_weight_bw": 0.29,
+        "dram_output_bw": 0.06
+      },
+      "maximum_derived_group_bandwidths": {
+        "input_bw": 4.25,
+        "weight_bw": 0.57,
+        "output_bw": 15.94,
+        "dram_input_bw": 0.25,
+        "dram_weight_bw": 0.29,
+        "dram_output_bw": 0.060000000000000005
+      },
+      "elapsed_seconds": 4.784
+    },
+    {
+      "layer_id": "07_layer1_1_conv2",
+      "group_count": 25088,
+      "output_coordinates": 200704,
+      "logical_slots": 115605504,
+      "valid_contributions": 112869376,
+      "padding_slots": 2736128,
+      "conservation_validated": true,
+      "original_layer_timeloop_bandwidths": {
+        "input_bw": 4.25,
+        "weight_bw": 8.01,
+        "output_bw": 1.44,
+        "dram_input_bw": 0.25,
+        "dram_weight_bw": 0.01,
+        "dram_output_bw": 0.97
+      },
+      "maximum_derived_group_bandwidths": {
+        "input_bw": 4.353026564087677,
+        "weight_bw": 8.01,
+        "output_bw": 1.44,
+        "dram_input_bw": 0.2560603861228045,
+        "dram_weight_bw": 0.01,
+        "dram_output_bw": 0.97
+      },
+      "elapsed_seconds": 10.649
+    },
+    {
+      "layer_id": "08_layer1_1_conv3",
+      "group_count": 401408,
+      "output_coordinates": 802816,
+      "logical_slots": 51380224,
+      "valid_contributions": 51380224,
+      "padding_slots": 0,
+      "conservation_validated": true,
+      "original_layer_timeloop_bandwidths": {
+        "input_bw": 1.0,
+        "weight_bw": 8.29,
+        "output_bw": 3.75,
+        "dram_input_bw": 0.5,
+        "dram_weight_bw": 0.29,
+        "dram_output_bw": 0.25
+      },
+      "maximum_derived_group_bandwidths": {
+        "input_bw": 1.0,
+        "weight_bw": 8.29,
+        "output_bw": 3.7499999999999996,
+        "dram_input_bw": 0.5,
+        "dram_weight_bw": 0.29,
+        "dram_output_bw": 0.25
+      },
+      "elapsed_seconds": 3.745
+    },
+    {
+      "layer_id": "15_layer2_0_downsample_0",
+      "group_count": 25088,
+      "output_coordinates": 401408,
+      "logical_slots": 102760448,
+      "valid_contributions": 102760448,
+      "padding_slots": 0,
+      "conservation_validated": true,
+      "original_layer_timeloop_bandwidths": {
+        "input_bw": 0.62,
+        "weight_bw": 8.29,
+        "output_bw": 32.38,
+        "dram_input_bw": 0.38,
+        "dram_weight_bw": 0.29,
+        "dram_output_bw": 0.94
+      },
+      "maximum_derived_group_bandwidths": {
+        "input_bw": 0.62,
+        "weight_bw": 8.29,
+        "output_bw": 32.38,
+        "dram_input_bw": 0.38,
+        "dram_weight_bw": 0.29,
+        "dram_output_bw": 0.94
+      },
+      "elapsed_seconds": 1.304
+    },
+    {
+      "layer_id": "16_layer2_1_conv1",
+      "group_count": 50176,
+      "output_coordinates": 100352,
+      "logical_slots": 51380224,
+      "valid_contributions": 51380224,
+      "padding_slots": 0,
+      "conservation_validated": true,
+      "original_layer_timeloop_bandwidths": {
+        "input_bw": 8.12,
+        "weight_bw": 0.86,
+        "output_bw": 4.44,
+        "dram_input_bw": 0.12,
+        "dram_weight_bw": 0.29,
+        "dram_output_bw": 0.97
+      },
+      "maximum_derived_group_bandwidths": {
+        "input_bw": 8.12,
+        "weight_bw": 0.86,
+        "output_bw": 4.44,
+        "dram_input_bw": 0.12000000000000001,
+        "dram_weight_bw": 0.29,
+        "dram_output_bw": 0.97
+      },
+      "elapsed_seconds": 2.619
+    },
+    {
+      "layer_id": "17_layer2_1_conv2",
+      "group_count": 25088,
+      "output_coordinates": 100352,
+      "logical_slots": 115605504,
+      "valid_contributions": 110166016,
+      "padding_slots": 5439488,
+      "conservation_validated": true,
+      "original_layer_timeloop_bandwidths": {
+        "input_bw": 8.02,
+        "weight_bw": 4.14,
+        "output_bw": 0.75,
+        "dram_input_bw": 0.02,
+        "dram_weight_bw": 0.14,
+        "dram_output_bw": 0.21
+      },
+      "maximum_derived_group_bandwidths": {
+        "input_bw": 8.415990481856038,
+        "weight_bw": 4.14,
+        "output_bw": 0.75,
+        "dram_input_bw": 0.020987507436049973,
+        "dram_weight_bw": 0.14,
+        "dram_output_bw": 0.21
+      },
+      "elapsed_seconds": 5.445
+    },
+    {
+      "layer_id": "18_layer2_1_conv3",
+      "group_count": 200704,
+      "output_coordinates": 401408,
+      "logical_slots": 51380224,
+      "valid_contributions": 51380224,
+      "padding_slots": 0,
+      "conservation_validated": true,
+      "original_layer_timeloop_bandwidths": {
+        "input_bw": 17.0,
+        "weight_bw": 8.02,
+        "output_bw": 0.5,
+        "dram_input_bw": 1.0,
+        "dram_weight_bw": 0.02,
+        "dram_output_bw": 0.38
+      },
+      "maximum_derived_group_bandwidths": {
+        "input_bw": 17.0,
+        "weight_bw": 8.02,
+        "output_bw": 0.5,
+        "dram_input_bw": 1.0,
+        "dram_weight_bw": 0.02,
+        "dram_output_bw": 0.38
+      },
+      "elapsed_seconds": 1.847
+    },
+    {
+      "layer_id": "28_layer3_0_downsample_0",
+      "group_count": 14336,
+      "output_coordinates": 200704,
+      "logical_slots": 102760448,
+      "valid_contributions": 102760448,
+      "padding_slots": 0,
+      "conservation_validated": true,
+      "original_layer_timeloop_bandwidths": {
+        "input_bw": 14.04,
+        "weight_bw": 2.0,
+        "output_bw": 0.6,
+        "dram_input_bw": 0.04,
+        "dram_weight_bw": 1.0,
+        "dram_output_bw": 0.41
+      },
+      "maximum_derived_group_bandwidths": {
+        "input_bw": 14.039999999999997,
+        "weight_bw": 2.0,
+        "output_bw": 0.6,
+        "dram_input_bw": 0.04,
+        "dram_weight_bw": 1.0,
+        "dram_output_bw": 0.41
+      },
+      "elapsed_seconds": 0.687
+    },
+    {
+      "layer_id": "32_layer3_2_conv1",
+      "group_count": 3136,
+      "output_coordinates": 50176,
+      "logical_slots": 51380224,
+      "valid_contributions": 51380224,
+      "padding_slots": 0,
+      "conservation_validated": true,
+      "original_layer_timeloop_bandwidths": {
+        "input_bw": 1.06,
+        "weight_bw": 2.29,
+        "output_bw": 32.09,
+        "dram_input_bw": 0.06,
+        "dram_weight_bw": 1.14,
+        "dram_output_bw": 0.23
+      },
+      "maximum_derived_group_bandwidths": {
+        "input_bw": 1.06,
+        "weight_bw": 2.29,
+        "output_bw": 32.09,
+        "dram_input_bw": 0.060000000000000005,
+        "dram_weight_bw": 1.14,
+        "dram_output_bw": 0.23
+      },
+      "elapsed_seconds": 1.196
+    },
+    {
+      "layer_id": "33_layer3_2_conv2",
+      "group_count": 3584,
+      "output_coordinates": 50176,
+      "logical_slots": 115605504,
+      "valid_contributions": 104857600,
+      "padding_slots": 10747904,
+      "conservation_validated": true,
+      "original_layer_timeloop_bandwidths": {
+        "input_bw": 7.19,
+        "weight_bw": 2.29,
+        "output_bw": 9.34,
+        "dram_input_bw": 0.19,
+        "dram_weight_bw": 0.29,
+        "dram_output_bw": 0.03
+      },
+      "maximum_derived_group_bandwidths": {
+        "input_bw": 7.5495,
+        "weight_bw": 2.29,
+        "output_bw": 9.34,
+        "dram_input_bw": 0.19949999999999998,
+        "dram_weight_bw": 0.29,
+        "dram_output_bw": 0.029999999999999995
+      },
+      "elapsed_seconds": 2.663
+    },
+    {
+      "layer_id": "34_layer3_2_conv3",
+      "group_count": 100352,
+      "output_coordinates": 200704,
+      "logical_slots": 51380224,
+      "valid_contributions": 51380224,
+      "padding_slots": 0,
+      "conservation_validated": true,
+      "original_layer_timeloop_bandwidths": {
+        "input_bw": 16.02,
+        "weight_bw": 1.14,
+        "output_bw": 4.38,
+        "dram_input_bw": 0.02,
+        "dram_weight_bw": 0.57,
+        "dram_output_bw": 0.94
+      },
+      "maximum_derived_group_bandwidths": {
+        "input_bw": 16.02,
+        "weight_bw": 1.14,
+        "output_bw": 4.38,
+        "dram_input_bw": 0.02,
+        "dram_weight_bw": 0.57,
+        "dram_output_bw": 0.94
+      },
+      "elapsed_seconds": 0.908
+    },
+    {
+      "layer_id": "47_layer4_0_downsample_0",
+      "group_count": 100352,
+      "output_coordinates": 100352,
+      "logical_slots": 102760448,
+      "valid_contributions": 102760448,
+      "padding_slots": 0,
+      "conservation_validated": true,
+      "original_layer_timeloop_bandwidths": {
+        "input_bw": 1.43,
+        "weight_bw": 16.33,
+        "output_bw": 2.22,
+        "dram_input_bw": 0.93,
+        "dram_weight_bw": 0.33,
+        "dram_output_bw": 0.48
+      },
+      "maximum_derived_group_bandwidths": {
+        "input_bw": 1.43,
+        "weight_bw": 16.33,
+        "output_bw": 2.22,
+        "dram_input_bw": 0.93,
+        "dram_weight_bw": 0.33,
+        "dram_output_bw": 0.48000000000000004
+      },
+      "elapsed_seconds": 0.901
+    },
+    {
+      "layer_id": "51_layer4_2_conv1",
+      "group_count": 6272,
+      "output_coordinates": 25088,
+      "logical_slots": 51380224,
+      "valid_contributions": 51380224,
+      "padding_slots": 0,
+      "conservation_validated": true,
+      "original_layer_timeloop_bandwidths": {
+        "input_bw": 5.0,
+        "weight_bw": 16.33,
+        "output_bw": 1.48,
+        "dram_input_bw": 1.0,
+        "dram_weight_bw": 0.33,
+        "dram_output_bw": 0.99
+      },
+      "maximum_derived_group_bandwidths": {
+        "input_bw": 5.0,
+        "weight_bw": 16.33,
+        "output_bw": 1.48,
+        "dram_input_bw": 1.0,
+        "dram_weight_bw": 0.33,
+        "dram_output_bw": 0.9900000000000001
+      },
+      "elapsed_seconds": 0.638
+    },
+    {
+      "layer_id": "52_layer4_2_conv2",
+      "group_count": 25088,
+      "output_coordinates": 25088,
+      "logical_slots": 115605504,
+      "valid_contributions": 94633984,
+      "padding_slots": 20971520,
+      "conservation_validated": true,
+      "original_layer_timeloop_bandwidths": {
+        "input_bw": 16.33,
+        "weight_bw": 2.61,
+        "output_bw": 2.08,
+        "dram_input_bw": 0.43,
+        "dram_weight_bw": 0.33,
+        "dram_output_bw": 0.16
+      },
+      "maximum_derived_group_bandwidths": {
+        "input_bw": 19.948836565096954,
+        "weight_bw": 2.61,
+        "output_bw": 2.08,
+        "dram_input_bw": 0.5252908587257619,
+        "dram_weight_bw": 0.33,
+        "dram_output_bw": 0.16
+      },
+      "elapsed_seconds": 1.471
+    },
+    {
+      "layer_id": "53_layer4_2_conv3",
+      "group_count": 12544,
+      "output_coordinates": 100352,
+      "logical_slots": 51380224,
+      "valid_contributions": 51380224,
+      "padding_slots": 0,
+      "conservation_validated": true,
+      "original_layer_timeloop_bandwidths": {
+        "input_bw": 3.0,
+        "weight_bw": 16.33,
+        "output_bw": 1.97,
+        "dram_input_bw": 1.0,
+        "dram_weight_bw": 0.33,
+        "dram_output_bw": 0.03
+      },
+      "maximum_derived_group_bandwidths": {
+        "input_bw": 3.0,
+        "weight_bw": 16.33,
+        "output_bw": 1.97,
+        "dram_input_bw": 1.0,
+        "dram_weight_bw": 0.33,
+        "dram_output_bw": 0.030000000000000002
+      },
+      "elapsed_seconds": 0.216
+    }
+  ],
+  "total_groups": 1469888,
+  "total_elapsed_seconds": 54.103,
+  "limitations": [
+    "Group-level bandwidths are estimates, not direct measurements.",
+    "Normalization scales do not validate predictive accuracy.",
+    "Evaluation is layer-held-out within ResNet-50, not independent-model generalization."
+  ]
+}

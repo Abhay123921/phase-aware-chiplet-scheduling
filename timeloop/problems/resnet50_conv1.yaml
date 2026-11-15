@@ -1,0 +1,77 @@
+problem:
+
+  version: 0.4
+
+  instance:
+    C: 3
+    G: 1
+
+    H: 224
+    Hdilation: 1
+    Hpad: 3
+    Hstride: 2
+
+    M: 64
+    N: 1
+
+    P: 112
+    Q: 112
+
+    R: 7
+    S: 7
+
+    W: 224
+    Wdilation: 1
+    Wpad: 3
+    Wstride: 2
+
+  shape:
+
+    coefficients:
+      - {name: Wstride, default: 1}
+      - {name: Hstride, default: 1}
+      - {name: Wdilation, default: 1}
+      - {name: Hdilation, default: 1}
+
+    data_spaces:
+
+      - name: Weights
+        projection:
+          - - - C
+          - - - M
+          - - - R
+          - - - S
+          - - - G
+
+      - name: Inputs
+        projection:
+          - - - N
+          - - - C
+          - - - R
+              - Wdilation
+            - - P
+              - Wstride
+          - - - S
+              - Hdilation
+            - - Q
+              - Hstride
+          - - - G
+
+      - name: Outputs
+        projection:
+          - - - N
+          - - - M
+          - - - Q
+          - - - P
+          - - - G
+        read_write: true
+
+    dimensions:
+      - C
+      - M
+      - R
+      - S
+      - N
+      - P
+      - Q
+      - G

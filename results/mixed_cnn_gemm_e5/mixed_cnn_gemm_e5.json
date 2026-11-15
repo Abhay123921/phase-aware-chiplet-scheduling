@@ -1,0 +1,148 @@
+{
+  "experiment": "E5_mixed_real_cnn_gemm_concurrent_scheduling",
+  "cnn_layer": "46_layer4_0_conv3",
+  "cnn_group_count": 12544,
+  "gemm_workload": "gemm_12x10x18",
+  "gemm_dimensions": {
+    "M": 12,
+    "N": 10,
+    "K": 18
+  },
+  "gemm_group_count": 8,
+  "combined_group_count": 12552,
+  "profile_source": "layer-level Timeloop measurements allocated to logical groups",
+  "scale_source": "configs/compact_calibration_scales_v2.json",
+  "policies": [
+    "static",
+    "static_rr",
+    "reactive"
+  ],
+  "hardware": "P04_4Chiplet_Baseline",
+  "results": [
+    {
+      "policy": "static",
+      "makespan": 4281901.333334017,
+      "completed_groups": 12552,
+      "remaps": 0,
+      "average_group_duration": 341.1329934141186,
+      "chiplet_group_counts": {
+        "C1": 12552,
+        "C2": 0,
+        "C3": 0,
+        "C4": 0
+      },
+      "chiplet_busy_time": {
+        "C1": 4281901.333334017,
+        "C2": 0.0,
+        "C3": 0.0,
+        "C4": 0.0
+      },
+      "workload_chiplet_counts": {
+        "46_layer4_0_conv3": {
+          "C1": 12544,
+          "C2": 0,
+          "C3": 0,
+          "C4": 0
+        },
+        "gemm_12x10x18": {
+          "C1": 8,
+          "C2": 0,
+          "C3": 0,
+          "C4": 0
+        }
+      },
+      "chiplet_utilization": {
+        "C1": 1.0,
+        "C2": 0.0,
+        "C3": 0.0,
+        "C4": 0.0
+      }
+    },
+    {
+      "policy": "static_rr",
+      "makespan": 1405108.3749999998,
+      "completed_groups": 12552,
+      "remaps": 0,
+      "average_group_duration": 447.73429865094533,
+      "chiplet_group_counts": {
+        "C1": 3138,
+        "C2": 3138,
+        "C3": 3138,
+        "C4": 3138
+      },
+      "chiplet_busy_time": {
+        "C1": 1404937.7083333333,
+        "C2": 1404979.8333333333,
+        "C3": 1405000.625,
+        "C4": 1405042.75
+      },
+      "workload_chiplet_counts": {
+        "46_layer4_0_conv3": {
+          "C1": 3136,
+          "C2": 3136,
+          "C3": 3136,
+          "C4": 3136
+        },
+        "gemm_12x10x18": {
+          "C1": 2,
+          "C2": 2,
+          "C3": 2,
+          "C4": 2
+        }
+      },
+      "chiplet_utilization": {
+        "C1": 0.9998785384318369,
+        "C2": 0.9999085183257366,
+        "C3": 0.9999233155236159,
+        "C4": 0.9999532954175155
+      }
+    },
+    {
+      "policy": "reactive",
+      "makespan": 1405108.3749999998,
+      "completed_groups": 12552,
+      "remaps": 0,
+      "average_group_duration": 447.76149219247924,
+      "chiplet_group_counts": {
+        "C1": 3138,
+        "C2": 3138,
+        "C3": 3138,
+        "C4": 3138
+      },
+      "chiplet_busy_time": {
+        "C1": 1405108.3749999998,
+        "C2": 1405086.5,
+        "C3": 1405064.625,
+        "C4": 1405042.75
+      },
+      "workload_chiplet_counts": {
+        "46_layer4_0_conv3": {
+          "C1": 3136,
+          "C2": 3136,
+          "C3": 3136,
+          "C4": 3136
+        },
+        "gemm_12x10x18": {
+          "C1": 2,
+          "C2": 2,
+          "C3": 2,
+          "C4": 2
+        }
+      },
+      "chiplet_utilization": {
+        "C1": 1.0,
+        "C2": 0.9999844318058386,
+        "C3": 0.9999688636116771,
+        "C4": 0.9999532954175155
+      }
+    }
+  ],
+  "limitations": [
+    "Abstract event-driven scheduling, not cycle-accurate simulation.",
+    "No NoP contention or physical data migration is modeled.",
+    "CNN group metrics are allocated from layer-level measurements.",
+    "GEMM group metrics are allocated from layer-level Timeloop measurements using logical access shares.",
+    "GEMM groups are candidate logical scheduling units, not claims of physical execution order.",
+    "CNN and GEMM use different workload shapes and group granularities."
+  ]
+}

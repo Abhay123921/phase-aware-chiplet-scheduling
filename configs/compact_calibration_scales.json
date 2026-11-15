@@ -1,0 +1,42 @@
+{
+  "experiment": "compact_group_calibration",
+  "model": "ResNet-50",
+  "split_manifest": "configs/compact_calibration_split.json",
+  "calibration_layer_ids": [
+    "01_conv1",
+    "02_layer1_0_conv1",
+    "03_layer1_0_conv2",
+    "04_layer1_0_conv3",
+    "05_layer1_0_downsample_0",
+    "12_layer2_0_conv1",
+    "13_layer2_0_conv2",
+    "14_layer2_0_conv3",
+    "15_layer2_0_downsample_0",
+    "25_layer3_0_conv1",
+    "26_layer3_0_conv2",
+    "27_layer3_0_conv3",
+    "28_layer3_0_downsample_0",
+    "44_layer4_0_conv1",
+    "45_layer4_0_conv2",
+    "46_layer4_0_conv3",
+    "47_layer4_0_downsample_0"
+  ],
+  "resource_keys": [
+    "input_bw",
+    "weight_bw",
+    "output_bw",
+    "dram_input_bw",
+    "dram_weight_bw",
+    "dram_output_bw"
+  ],
+  "scales": {
+    "input_bw": 17.0,
+    "weight_bw": 16.57,
+    "output_bw": 32.38,
+    "dram_input_bw": 1.0,
+    "dram_weight_bw": 2.29,
+    "dram_output_bw": 0.97
+  },
+  "method": "maximum estimated compact-group bandwidth per resource",
+  "provenance": "Derived exclusively from compact-group profiles allocated from calibration-layer Timeloop measurements."
+}

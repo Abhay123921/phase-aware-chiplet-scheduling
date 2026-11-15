@@ -1,0 +1,24 @@
+DRAM [ Weights:147456 (147456) Inputs:415872 (415872) Outputs:100352 (100352) ] 
+-------------------------------------------------------------------------------
+| for Q in [0:2)
+|   for M in [0:2)
+|     for P in [0:28)
+|       for R in [0:3)
+|         for S in [0:3)
+|           for C in [0:32)
+
+buffer [ Weights:256 (256) Inputs:108 (108) Outputs:896 (896) ] 
+---------------------------------------------------------------
+|             for Q in [0:7)
+|               for M in [0:16)
+|                 for C in [0:2)
+
+inter_PE_spatial [ ] 
+--------------------
+|                   for C in [0:2) (Spatial-X)
+|                     for Q in [0:2) (Spatial-X)
+|                       for M in [0:4) (Spatial-X)
+
+reg [ Weights:1 (1) Inputs:1 (1) Outputs:1 (1) ] 
+------------------------------------------------
+|                         << Compute >>

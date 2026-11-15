@@ -1,0 +1,51 @@
+architecture:
+  version: 0.4
+  nodes:
+  - !Container
+    name: system
+
+  - !Component
+    name: DRAM
+    class: DRAM
+    attributes:
+      type: "LPDDR4"
+      width: 64
+      depth: 16777216
+      datawidth: DATAWIDTH
+
+  - !Component
+    name: buffer
+    class: SRAM
+    attributes:
+      depth: 512
+      width: 128
+      datawidth: DATAWIDTH
+    constraints:
+      dataspace:
+        keep: [Inputs, Outputs, Weights]
+
+  - !Container
+    name: PE
+    spatial:
+      meshX: 16
+
+  - !Component
+    name: reg
+    class: SRAM
+    subclass: register
+    attributes:
+      datawidth: DATAWIDTH
+      depth: 1
+      width: datawidth * 3
+    constraints:
+      dataspace:
+        keep: [Inputs, Outputs, Weights]
+      temporal:
+        factors_only: []
+
+  - !Component
+    name: mac
+    class: intmac
+    attributes:
+      multiplier_width: DATAWIDTH
+      adder_width: DATAWIDTH * 2

@@ -1,0 +1,16 @@
+DRAM [ Inputs:256 (256) Weights:256 (256) Outputs:256 (256) ] 
+buffer [ Inputs:256 (256) Weights:256 (256) Outputs:256 (256) ] 
+---------------------------------------------------------------
+| for N in [0:4)
+|   for K in [0:8)
+|     for M in [0:8)
+
+inter_PE_spatial [ ] 
+--------------------
+|       for K in [0:2) (Spatial-X)
+|         for N in [0:4) (Spatial-X)
+|           for M in [0:2) (Spatial-X)
+
+reg [ Inputs:1 (1) Weights:1 (1) Outputs:1 (1) ] 
+------------------------------------------------
+|             << Compute >>

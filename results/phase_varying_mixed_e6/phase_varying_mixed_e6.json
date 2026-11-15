@@ -1,0 +1,197 @@
+{
+  "experiment": "E6_sequential_phase_varying_cnn_with_concurrent_gemm",
+  "cnn_workload_id": "resnet50_sequential",
+  "cnn_layer_order": [
+    "45_layer4_0_conv2",
+    "46_layer4_0_conv3"
+  ],
+  "cnn_group_counts": {
+    "45_layer4_0_conv2": 25088,
+    "46_layer4_0_conv3": 12544
+  },
+  "gemm_workload_id": "gemm_12x10x18",
+  "gemm_group_count": 8,
+  "combined_group_count": 37640,
+  "profile_source": "layer-level Timeloop measurements allocated to logical groups",
+  "scale_source": "configs/compact_calibration_scales_v2.json",
+  "held_out_layers": [
+    "45_layer4_0_conv2",
+    "46_layer4_0_conv3"
+  ],
+  "calibration_layer_count": 17,
+  "evaluation_layer_count": 36,
+  "policies": [
+    "static",
+    "static_rr",
+    "reactive",
+    "causal_phase_aware"
+  ],
+  "hardware": "P04_4Chiplet_Baseline",
+  "results": [
+    {
+      "policy": "static",
+      "makespan": 13909793.889372274,
+      "completed_groups": 37640,
+      "remaps": 0,
+      "average_group_duration": 369.54819047216455,
+      "chiplet_group_counts": {
+        "C1": 37640,
+        "C2": 0,
+        "C3": 0,
+        "C4": 0
+      },
+      "chiplet_busy_time": {
+        "C1": 13909793.889372274,
+        "C2": 0.0,
+        "C3": 0.0,
+        "C4": 0.0
+      },
+      "chiplet_utilization": {
+        "C1": 1.0,
+        "C2": 0.0,
+        "C3": 0.0,
+        "C4": 0.0
+      },
+      "workload_chiplet_counts": {
+        "resnet50_sequential": {
+          "C1": 37632,
+          "C2": 0,
+          "C3": 0,
+          "C4": 0
+        },
+        "gemm_12x10x18": {
+          "C1": 8,
+          "C2": 0,
+          "C3": 0,
+          "C4": 0
+        }
+      }
+    },
+    {
+      "policy": "static_rr",
+      "makespan": 4616296.625,
+      "completed_groups": 37640,
+      "remaps": 1,
+      "average_group_duration": 426.4994685091122,
+      "chiplet_group_counts": {
+        "C1": 9410,
+        "C2": 9410,
+        "C3": 9410,
+        "C4": 9410
+      },
+      "chiplet_busy_time": {
+        "C1": 3811827.647341276,
+        "C2": 3811888.9723412762,
+        "C3": 4616232.625,
+        "C4": 3813490.7499999995
+      },
+      "chiplet_utilization": {
+        "C1": 0.8257328237310305,
+        "C2": 0.8257461081893273,
+        "C3": 0.9999861360728742,
+        "C4": 0.8260930914507686
+      },
+      "workload_chiplet_counts": {
+        "resnet50_sequential": {
+          "C1": 9408,
+          "C2": 9408,
+          "C3": 9408,
+          "C4": 9408
+        },
+        "gemm_12x10x18": {
+          "C1": 2,
+          "C2": 2,
+          "C3": 2,
+          "C4": 2
+        }
+      }
+    },
+    {
+      "policy": "reactive",
+      "makespan": 3973234.7499999995,
+      "completed_groups": 37640,
+      "remaps": 1,
+      "average_group_duration": 422.2224531169981,
+      "chiplet_group_counts": {
+        "C1": 9830,
+        "C2": 9830,
+        "C3": 8154,
+        "C4": 9826
+      },
+      "chiplet_busy_time": {
+        "C1": 3973060.0843283343,
+        "C2": 3973112.875995001,
+        "C3": 3973224.625,
+        "C4": 3973055.5499999993
+      },
+      "chiplet_utilization": {
+        "C1": 0.9999560394281598,
+        "C2": 0.999969326251111,
+        "C3": 0.9999974516985186,
+        "C4": 0.9999548982098276
+      },
+      "workload_chiplet_counts": {
+        "resnet50_sequential": {
+          "C1": 9828,
+          "C2": 9828,
+          "C3": 8152,
+          "C4": 9824
+        },
+        "gemm_12x10x18": {
+          "C1": 2,
+          "C2": 2,
+          "C3": 2,
+          "C4": 2
+        }
+      }
+    },
+    {
+      "policy": "causal_phase_aware",
+      "makespan": 3973234.7499999995,
+      "completed_groups": 37640,
+      "remaps": 1,
+      "average_group_duration": 422.2224531169981,
+      "chiplet_group_counts": {
+        "C1": 9830,
+        "C2": 9830,
+        "C3": 8154,
+        "C4": 9826
+      },
+      "chiplet_busy_time": {
+        "C1": 3973060.0843283343,
+        "C2": 3973112.875995001,
+        "C3": 3973224.625,
+        "C4": 3973055.5499999993
+      },
+      "chiplet_utilization": {
+        "C1": 0.9999560394281598,
+        "C2": 0.999969326251111,
+        "C3": 0.9999974516985186,
+        "C4": 0.9999548982098276
+      },
+      "workload_chiplet_counts": {
+        "resnet50_sequential": {
+          "C1": 9828,
+          "C2": 9828,
+          "C3": 8152,
+          "C4": 9824
+        },
+        "gemm_12x10x18": {
+          "C1": 2,
+          "C2": 2,
+          "C3": 2,
+          "C4": 2
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "Abstract event-driven scheduling, not cycle-accurate simulation.",
+    "No NoP contention or physical data migration is modeled.",
+    "CNN group metrics are allocated from layer-level Timeloop measurements.",
+    "GEMM group metrics are allocated from layer-level measurements using logical access shares.",
+    "GEMM groups are candidate logical scheduling units.",
+    "The causal phase-aware policy classifies the current ready group; it does not predict future layer phases.",
+    "The CNN layer barrier is preserved, while GEMM progresses as an independent concurrent workload."
+  ]
+}

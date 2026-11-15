@@ -1,0 +1,27 @@
+{
+  "experiment": "causal_compact_group_calibration",
+  "model": "ResNet-50",
+  "split_manifest": "configs/compact_calibration_split_v2.json",
+  "calibration_layer_count": 17,
+  "total_groups": 1469888,
+  "baseline_model": "median",
+  "baseline_source": "models/compact_resource_predictor_v2.joblib",
+  "baseline_values": {
+    "inputs_shared_bw": 4.25,
+    "weights_shared_bw": 8.01,
+    "outputs_shared_bw": 2.22,
+    "dram_inputs_shared_bw": 0.25,
+    "dram_weights_shared_bw": 0.29,
+    "dram_outputs_shared_bw": 0.25
+  },
+  "scales": {
+    "input_bw": 5.191828254847646,
+    "weight_bw": 8.01,
+    "output_bw": 2.22,
+    "dram_input_bw": 0.3054016620498615,
+    "dram_weight_bw": 0.29,
+    "dram_output_bw": 0.25
+  },
+  "method": "maximum causal-estimated compact-group bandwidth per resource",
+  "provenance": "Derived exclusively from causal metadata-based group estimates on the 17 calibration layers."
+}

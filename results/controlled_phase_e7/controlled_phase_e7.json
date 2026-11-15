@@ -1,0 +1,162 @@
+{
+  "experiment": "E7_controlled_compute_memory_phases",
+  "groups_per_workload": 32,
+  "results": [
+    {
+      "policy": "static_rr",
+      "makespan": 2666.6666666666665,
+      "completed_groups": 64,
+      "remaps": 0,
+      "chiplet_group_counts": {
+        "C1": 16,
+        "C2": 16,
+        "C3": 16,
+        "C4": 16
+      },
+      "workload_chiplet_counts": {
+        "compute_workload": {
+          "C1": 8,
+          "C2": 8,
+          "C3": 8,
+          "C4": 8
+        },
+        "memory_workload": {
+          "C1": 8,
+          "C2": 8,
+          "C3": 8,
+          "C4": 8
+        }
+      },
+      "layer_placement_counts": {
+        "compute_workload": [
+          {
+            "layer_id": "compute_phase",
+            "group_counts": {
+              "C1": 8,
+              "C2": 8,
+              "C3": 8,
+              "C4": 8
+            },
+            "dominant_chiplet": "C4"
+          }
+        ],
+        "memory_workload": [
+          {
+            "layer_id": "memory_phase",
+            "group_counts": {
+              "C1": 8,
+              "C2": 8,
+              "C3": 8,
+              "C4": 8
+            },
+            "dominant_chiplet": "C4"
+          }
+        ]
+      }
+    },
+    {
+      "policy": "reactive",
+      "makespan": 2300.0,
+      "completed_groups": 64,
+      "remaps": 0,
+      "chiplet_group_counts": {
+        "C1": 16,
+        "C2": 16,
+        "C3": 17,
+        "C4": 15
+      },
+      "workload_chiplet_counts": {
+        "compute_workload": {
+          "C1": 10,
+          "C2": 10,
+          "C3": 5,
+          "C4": 7
+        },
+        "memory_workload": {
+          "C1": 6,
+          "C2": 6,
+          "C3": 12,
+          "C4": 8
+        }
+      },
+      "layer_placement_counts": {
+        "compute_workload": [
+          {
+            "layer_id": "compute_phase",
+            "group_counts": {
+              "C1": 10,
+              "C2": 10,
+              "C3": 5,
+              "C4": 7
+            },
+            "dominant_chiplet": "C2"
+          }
+        ],
+        "memory_workload": [
+          {
+            "layer_id": "memory_phase",
+            "group_counts": {
+              "C1": 6,
+              "C2": 6,
+              "C3": 12,
+              "C4": 8
+            },
+            "dominant_chiplet": "C3"
+          }
+        ]
+      }
+    },
+    {
+      "policy": "causal_phase_aware",
+      "makespan": 2133.3333333333335,
+      "completed_groups": 64,
+      "remaps": 0,
+      "chiplet_group_counts": {
+        "C1": 17,
+        "C2": 17,
+        "C3": 16,
+        "C4": 14
+      },
+      "workload_chiplet_counts": {
+        "compute_workload": {
+          "C1": 12,
+          "C2": 12,
+          "C3": 0,
+          "C4": 8
+        },
+        "memory_workload": {
+          "C1": 5,
+          "C2": 5,
+          "C3": 16,
+          "C4": 6
+        }
+      },
+      "layer_placement_counts": {
+        "compute_workload": [
+          {
+            "layer_id": "compute_phase",
+            "group_counts": {
+              "C1": 12,
+              "C2": 12,
+              "C3": 0,
+              "C4": 8
+            },
+            "dominant_chiplet": "C2"
+          }
+        ],
+        "memory_workload": [
+          {
+            "layer_id": "memory_phase",
+            "group_counts": {
+              "C1": 5,
+              "C2": 5,
+              "C3": 16,
+              "C4": 6
+            },
+            "dominant_chiplet": "C3"
+          }
+        ]
+      }
+    }
+  ]
+}
